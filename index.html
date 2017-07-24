@@ -5,9 +5,69 @@
     <title>Title</title>
     <script src="easeljs-0.8.2.min.js"></script>
     <script src="circle.js"></script>
+    <style>
+        #FailBox{
+            position: absolute;
+            top:100px;
+            left: 100px;
+            background-color: brown;
+            width: 300px;
+            height: 300px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+        #SuccessBox{
+            position: absolute;
+            top:100px;
+            left: 100px;
+            background-color: brown;
+            width: 350px;
+            height: 300px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+        h4{
+            margin-top: 50px;
+        }
+        .gold{
+            color: gold;
+        }
+        button{
+            width: 80px;
+            height: 30px;
+            position: absolute;
+            bottom: 50px;
+            left: 110px;
+            background-color: brown;
+            color: white;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <canvas width="800px" height="800px" id="gameView"></canvas>
+    <div id="FailBox">
+        <h4>你个辣鸡</h4>
+        <h2>你没有抓住神经猫</h2>
+        <label>— 神经病院长给你打 <span class="gold">0</span> 分 —</label><br>
+        <button class="againGame"  onclick="againGame()">再来一次</button>
+    </div>
+    <div id="SuccessBox">
+        <h4>厉害了word锅</h4>
+        <h2>你用 <span id="step" class="gold">10</span> 步抓住了神经猫</h2>
+        <label>— 神经病院长给你打 <span id="score" class="gold">99</span> 分 —</label><br>
+        <button class="againGame" onclick="againGame()">再来一次</button>
+    </div>
+    <script>
+        function againGame() {
+            location.reload();
+        }
+    </script>
+    <canvas width="550px" height="550px" id="gameView"></canvas>
     <script src="app.js"></script>
+
 </body>
 </html>

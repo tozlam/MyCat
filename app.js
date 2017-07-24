@@ -10,6 +10,12 @@ stage.addChild(gameView);
 var circleArr=[[],[],[],[],[],[],[],[],[]];
 var currentCat;
 var MOVE_NONE=-1,MOVE_LEFT=0,MOVE_UP_LEFT=1,MOVE_UP_RIGHT=2,MOVE_RIGHT=3,MOVE_DOWN_RIGHT=4,MOVE_DOWN_LEFT=5;
+var countStep=0;
+var failBox=document.getElementById("FailBox");
+var successBox=document.getElementById("SuccessBox");
+var stepScore=document.getElementById("step");
+var score=document.getElementById("score");
+var clickable=true;
 
 function getMoveDir(cat) {
     var distanceMap=[];
@@ -130,11 +136,16 @@ function getMoveDir(cat) {
 function circleClick(e) {
     if (e.target.getCircleType() != circle.TYPE_CAT) {
         e.target.setCircleType(circle.TYPE_SELECTED);
+        if(clickable){
+            countStep++;
+        }
+
     }else{
         return;
     }
     if(currentCat.indexX==0||currentCat.indexX==8||currentCat.indexY==0||currentCat.indexY==8){
-        alert("游戏结束");
+        failBox.style.display="block";
+       // alert("游戏结束");
         return;
     }
     // var leftCircle=circleArr[currentCat.indexX-1][currentCat.indexY];
@@ -171,6 +182,7 @@ function circleClick(e) {
     //     alert("游戏结束");
     // }
     var dir=getMoveDir(currentCat);
+
     switch (dir){
         case MOVE_LEFT:
             currentCat.setCircleType(circle.TYPE_UNSELECTED);
@@ -203,7 +215,11 @@ function circleClick(e) {
             currentCat.setCircleType(circle.TYPE_CAT);
             break;
         default:
-            alert("游戏结束");
+            // alert("游戏结束,一共走了"+countStep+"步");
+            clickable=false;
+            stepScore.innerHTML=countStep+"";
+            score.innerHTML=""+100-countStep;
+            successBox.style.display="block";
             break;
     }
 }
