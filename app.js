@@ -134,7 +134,7 @@ function getMoveDir(cat) {
 
 }
 function circleClick(e) {
-    if (e.target.getCircleType() != circle.TYPE_CAT) {
+    if (e.target.getCircleType() != circle.TYPE_CAT&&e.target.getCircleType() != circle.TYPE_SELECTED) {
         e.target.setCircleType(circle.TYPE_SELECTED);
         if(clickable){
             countStep++;
