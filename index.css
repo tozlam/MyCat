@@ -14,7 +14,7 @@ body{
     font-size: 20px;
     color: white;
     text-align: center;
-    display: none;
+    /*display: none;*/
     z-index: 10;
 }
 #SuccessBox{
@@ -25,7 +25,7 @@ body{
     font-size: 20px;
     color: white;
     text-align: center;
-    display: none;
+    /*display: none;*/
     z-index: 10;
 }
 h4{
