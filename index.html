@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>抓住神经猫Lite版</title>
-    <link type="text/css" href="index.css" rel="stylesheet">
-    <script src="easeljs-0.8.2.min.js"></script>
-    <script src="circle.js"></script>
+    <link type="text/css" href="css/index.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body onload="centered()">
     <div id="FailBox">
@@ -20,33 +19,14 @@
         <label>— 神经病院长给你打 <span id="score" class="gold">99</span> 分 —</label><br>
         <button class="againGame" onclick="againGame()">再抓一次</button>
     </div>
-
+    <div id="title">
+        <label onclick="againGame()" id="title-againGame"><i class="fa fa-refresh" aria-hidden="true"></i>重玩</label>
+        <label>步数: <span id="nowStep">0</span></label>
+    </div>
+    <script src="js/easeljs-0.8.2.min.js"></script>
+    <script src="js/circle.js"></script>
     <canvas width="525px" height="500px" id="gameView"></canvas>
-    <script src="app.js"></script>
-
-    <script>
-        function centered() {
-            var cvs=document.getElementById("gameView");
-            var scbox=document.getElementById("SuccessBox");
-            var flbox=document.getElementById("FailBox");
-            cvs.style.top="50%";
-            cvs.style.marginTop=-(cvs.scrollHeight/2)+"px";
-            cvs.style.left="50%";
-            cvs.style.marginLeft=-(cvs.scrollWidth/2)+"px";
-            scbox.style.top="50%";
-            scbox.style.marginTop=-(scbox.scrollHeight/2)+"px";
-            scbox.style.left="50%";
-            scbox.style.marginLeft=-(scbox.scrollWidth/2)+"px";
-            flbox.style.top="50%";
-            flbox.style.marginTop=-(flbox.scrollHeight/2)+"px";
-            flbox.style.left="50%";
-            flbox.style.marginLeft=-(flbox.scrollWidth/2)+"px";
-            scbox.style.display="none";
-            flbox.style.display="none";
-        }
-        function againGame() {
-            window.location.href=window.location.href;
-        }
-    </script>
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

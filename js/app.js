@@ -15,6 +15,7 @@ var failBox=document.getElementById("FailBox");
 var successBox=document.getElementById("SuccessBox");
 var stepScore=document.getElementById("step");
 var score=document.getElementById("score");
+var nowStep=document.getElementById("nowStep");
 var clickable=true;
 
 function getMoveDir(cat) {
@@ -134,16 +135,17 @@ function getMoveDir(cat) {
 
 }
 function circleClick(e) {
-    if (e.target.getCircleType() != circle.TYPE_CAT&&e.target.getCircleType() != circle.TYPE_SELECTED) {
+    if (e.target.getCircleType() != circle.TYPE_CAT&&e.target.getCircleType() != circle.TYPE_SELECTED&&clickable) {
         e.target.setCircleType(circle.TYPE_SELECTED);
-        if(clickable){
             countStep++;
-        }
+            nowStep.innerHTML=countStep;
+
 
     }else{
         return;
     }
     if(currentCat.indexX==0||currentCat.indexX==8||currentCat.indexY==0||currentCat.indexY==8){
+        clickable=false;
         failBox.style.display="block";
        // alert("游戏结束");
         return;

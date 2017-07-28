@@ -14,23 +14,35 @@ body{
     font-size: 20px;
     color: white;
     text-align: center;
-    /*display: none;*/
+    display: none;
     z-index: 10;
+    left: 50%;
+    top: 50%;
 }
 #SuccessBox{
     position: absolute;
     background-color: brown;
     width: 350px;
-    height: 300px;
+    height: 350px;
     font-size: 20px;
     color: white;
     text-align: center;
-    /*display: none;*/
+    display: none;
     z-index: 10;
+    left: 50%;
+    top: 50%;
 }
 h4{
     margin-top: 50px;
 }
+#SuccessBox>h4{
+    margin-top: 80px;
+}
+h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .gold{
     color: gold;
 }
@@ -39,12 +51,27 @@ button{
     height: 30px;
     position: absolute;
     bottom: 50px;
-    left: 110px;
     background-color: brown;
     color: white;
     border: none;
+    left: 50%;
 }
 canvas{
     background-color:#515356;
     position: absolute;
+    left: 50%;
+    top: 50%;
+}
+#title{
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 20px;
+}
+#title-againGame{
+    cursor: pointer;
+    margin-right: 10px;
+}
+.fa-refresh{
+    margin-right: 3px;
 }
