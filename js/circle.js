@@ -1,4 +1,3 @@
-
 function  circle() {
     createjs.Shape.call(this);
     var image=new Image();
