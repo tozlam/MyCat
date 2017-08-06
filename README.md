@@ -1,5 +1,6 @@
 # MyCat
-围住神经猫Lite版 
+## 围住神经猫Lite版 
+基于Create.Js下的easeljs
 
 7.29
 -------
