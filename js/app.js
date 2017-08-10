@@ -16,6 +16,9 @@ var successBox=document.getElementById("SuccessBox");
 var stepScore=document.getElementById("step");
 var score=document.getElementById("score");
 var nowStep=document.getElementById("nowStep");
+var heightSocreTip=document.getElementById("heightestScore");
+var SuccessBox_h4=document.getElementById("SuccessBox-h4");
+var heightestScore=100;
 var clickable=true;
 
 function getMoveDir(cat) {
@@ -219,6 +222,11 @@ function circleClick(e) {
         default:
             // alert("游戏结束,一共走了"+countStep+"步");
             clickable=false;
+            if(heightestScore>countStep){
+               SuccessBox_h4.innerHTML="新纪录！";
+               SuccessBox_h4.style.color="gold";
+               setCookie(countStep);
+            }
             stepScore.innerHTML=countStep+"";
             score.innerHTML=""+100-countStep;
             successBox.style.display="block";
@@ -249,5 +257,21 @@ function addCircles() {
         }
     }
 }
+function setCookie(score) {
+    document.cookie="score="+score;
+}
+function getCookie() {
+    if(document.cookie.length>0){
+        var hs_start=document.cookie.indexOf("score=");
+        if(hs_start==-1){
+            return;
+        }
+        var hs_end=document.cookie.indexOf(";",hs_start);
+        heightestScore=document.cookie.substring(hs_start+6,hs_end);
+        heightSocreTip.innerHTML=""+100-heightestScore;
+    }
+}
+
 addCircles();
+getCookie();
 

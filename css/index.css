@@ -18,6 +18,7 @@ body{
     z-index: 10;
     left: 50%;
     top: 50%;
+    transform:translate(-50%,-50%);
 }
 #SuccessBox{
     position: absolute;
@@ -31,6 +32,7 @@ body{
     z-index: 10;
     left: 50%;
     top: 50%;
+    transform:translate(-50%,-50%);
 }
 h4{
     margin-top: 50px;
@@ -55,23 +57,35 @@ button{
     color: white;
     border: none;
     left: 50%;
+    transform:translate(-50%,0);
 }
 canvas{
     background-color:#515356;
     position: absolute;
     left: 50%;
     top: 50%;
+    transform:translate(-50%,-50%);
+}
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
 }
 #title{
-    position: absolute;
+    position: relative;
     color: white;
-    left: 50%;
-    top: 20px;
+    left:130px;
+    top: -270px;
+    z-index: 10;
 }
 #title-againGame{
     cursor: pointer;
-    margin-right: 10px;
+
 }
 .fa-refresh{
     margin-right: 3px;
+}
+.title-tip{
+    margin-left: 10px;
 }
