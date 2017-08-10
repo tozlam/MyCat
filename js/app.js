@@ -267,7 +267,12 @@ function getCookie() {
             return;
         }
         var hs_end=document.cookie.indexOf(";",hs_start);
-        heightestScore=document.cookie.substring(hs_start+6,hs_end);
+        if(hs_end!=-1){
+            heightestScore=document.cookie.substring(hs_start+6,hs_end);
+        }
+        else{
+            heightestScore=document.cookie.substring(hs_start+6);
+        }
         heightSocreTip.innerHTML=""+100-heightestScore;
     }
 }
